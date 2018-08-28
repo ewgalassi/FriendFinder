@@ -1,29 +1,25 @@
-var http = require("http");
-var fs = require("fs");
+var express = require("express");
+var bodyParser = require("body-parser");
+var path = require("path");
 
-var PORT = 7000;
+var app = express();
+var PORT = process.env.PORT || 3000;
 
-var server = http.createServer(handleRequest);
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-function handleRequest(req, res) {
-    var path = req.url
-    switch (path) {
-        case "/survey":
-            displayPage(path, req, res);
-            break;
-        default:
-            displayPage("/index", req, res);
-            break;
-    };
-};
+app.get("/survey", function (req, res) {
+    res.sendFile(path.join(__dirname, "/../public/survey.html"));
+});
 
-function displayPage(url, req, res) {
-    fs.readFile(__dirname + url + ".html", function (err, data) {
-        res.writeHead(200, { "Content-Type": "text/html" });
-        res.end(data);
-    });
-};
+app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "/../public/home.html"));
+});
 
-server.listen(PORT, function () {
+app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "/../public/home.html"));
+});
+
+app.listen(PORT, function () {
     console.log("Server is listening on PORT: " + PORT);
 });  
