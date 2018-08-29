@@ -3,11 +3,11 @@ var bodyParser = require("body-parser");
 var path = require("path");
 var router = require("./app/routing/htmlRoutes");
 var api = require("./app/routing/apiRoutes");
-var friends = require("./app/data/friends")
+var friends = require("./app/data/friends");
 
 var app = express();
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 7000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

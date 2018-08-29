@@ -18,8 +18,8 @@
             name="lname"><br>
         <h3>Question 1</h3>
         <div class="form-group">
-            <label for="exampleFormControlSelect1">I absolutely LOVE gluten!</label>
-            <select class="score">
+            <label for="exampleFormControlSelect1">I absolutely LOVE gluten!</label><br>
+            <select id="score1">
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -29,8 +29,8 @@
         </div><br>
         <h3>Question 2</h3>
         <div class="form-group">
-            <label for="exampleFormControlSelect1">I think farmers are the best people in the world.</label>
-            <select class="score">
+            <label for="exampleFormControlSelect1">I think farmers are the best people in the world.</label><br>
+            <select id="score2">
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -40,8 +40,8 @@
         </div><br>
         <h3>Question 3</h3>
         <div class="form-group">
-            <label for="exampleFormControlSelect1">Beards are my greatest passion.</label>
-            <select class="score">
+            <label for="exampleFormControlSelect1">Beards are my greatest passion.</label><br>
+            <select id="score3">
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -51,8 +51,8 @@
         </div><br>
         <h3>Question 4</h3>
         <div class="form-group">
-            <label for="exampleFormControlSelect1">I never stop dancing, not even in line at the supermarket.</label>
-            <select class="score">
+            <label for="exampleFormControlSelect1">I never stop dancing, not even in line at the supermarket.</label><br>
+            <select id="score4">
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -62,8 +62,8 @@
         </div><br>
         <h3>Question 5</h3>
         <div class="form-group">
-            <label for="exampleFormControlSelect1">I walk around with a fistful of bacon in each greasy mitt.</label>
-            <select class="score">
+            <label for="exampleFormControlSelect1">I walk around with a fistful of bacon in each greasy mitt.</label><br>
+            <select id="score5">
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -73,8 +73,8 @@
         </div><br>
         <h3>Question 6</h3>
         <div class="form-group">
-            <label for="exampleFormControlSelect1">I only watch Disney movies.</label>
-            <select class="score">
+            <label for="exampleFormControlSelect1">I only watch Disney movies.</label><br>
+            <select id="score6">
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -84,8 +84,8 @@
         </div><br>
         <h3>Question 7</h3>
         <div class="form-group">
-            <label for="exampleFormControlSelect1">I can sing like someone bred Andrea Bocelli with Adele</label>
-            <select class="score">
+            <label for="exampleFormControlSelect1">I can sing like someone bred Andrea Bocelli with Adele</label><br>
+            <select id="score7">
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -95,8 +95,8 @@
         </div><br>
         <h3>Question 8</h3>
         <div class="form-group">
-            <label for="exampleFormControlSelect1">Food can be renting a place on the floor and I'll still eat it.</label>
-            <select class="score">
+            <label for="exampleFormControlSelect1">Food can be renting a place on the floor and I'll still eat it.</label><br>
+            <select id="score8">
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -106,8 +106,8 @@
         </div><br>
         <h3>Question 9</h3>
         <div class="form-group">
-            <label for="exampleFormControlSelect1">I have conversations with the characters in the movie I am watching.</label>
-            <select class="score">
+            <label for="exampleFormControlSelect1">I have conversations with the characters in the movie I am watching.</label><br>
+            <select id="score9">
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -117,8 +117,8 @@
         </div><br>
         <h3>Question 10</h3>
         <div class="form-group">
-            <label for="exampleFormControlSelect1">I believe that robots will rise up to destroy us.</label>
-            <select class="score">
+            <label for="exampleFormControlSelect1">I believe that robots will rise up to destroy us.</label><br>
+            <select id="score10">
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -139,13 +139,13 @@
             scores: [],
         };
 
-        for (item in $(".score")) {
-            newFriend.scores.push($(".score").val().trim());
+        for (i = 1; i < 11; i++) {
+            newFriend.scores.push($("#score" + i).val().trim());
         };
 
         $.post("/api/friends", newFriend)
             .then(function (data) {
-                console.log("survey.html", data);
+                console.log(data);
                 alert("Adding friend...");
             });
     });
