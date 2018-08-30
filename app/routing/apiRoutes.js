@@ -4,7 +4,7 @@ var path = require("path");
 var friends = require("../data/friends")
 
 var app = express();
-var router = new express.Router()
+var router = new express.Router();
 
 router.get("/", function (req, res) {
     return res.json(friends);
@@ -29,14 +29,9 @@ router.post("/", function (req, res) {
     var newfriend = req.body;
 
     newfriend.routeName = newfriend.name.replace(/\s+/g, "").toLowerCase();
-    console.log(newfriend);
-    analyze(newfriend);
-});
-
-function analyze (myself) {
     var totalArr = [];
     for (i = 0; i < friends.length; i++) {
-        score1 = myself.scores;
+        score1 = newfriend.scores;
         score2 = friends[i].scores;
         var total = 0;
         for (j = 0; j < 10; j++) {
@@ -44,12 +39,9 @@ function analyze (myself) {
         };
         totalArr.push(total);
     };
-    console.log(totalArr);
     var lowNum = Math.min.apply(null, totalArr);
-    console.log(lowNum);
     var match = totalArr.indexOf(lowNum);
-    console.log(match);
-    console.log(friends[match]);
-}
+    res.json(friends[match]);
+});
 
 module.exports = router

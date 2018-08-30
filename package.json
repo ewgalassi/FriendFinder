@@ -1,5 +1,5 @@
 {
-  "name": "FriendFinder",
+  "name": "friendfinder",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -20,6 +20,8 @@
   "homepage": "https://github.com/ewgalassi/FriendFinder#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.3"
-  }
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4"
+  },
+  "devDependencies": {}
 }

@@ -12,6 +12,8 @@ var PORT = process.env.PORT || 7000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.static("public"));
+
 app.use("/api/friends", api);
 
 app.use("/", router);
