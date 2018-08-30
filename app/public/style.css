@@ -18,6 +18,8 @@
     border: 1px solid #888;
     width: 80%;
     height: 80%;
+    text-align: center;
+    font-size: 36px;
 }
 
 .close {
@@ -25,5 +27,5 @@
     float: right;
     font-size: 28px;
     font-weight: bold;
-    display: hidden;
+    display: none;
 }

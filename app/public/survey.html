@@ -140,6 +140,9 @@
     </div>
 </body>
 <script type="text/javascript">
+    var modal = $("#myModal");
+    var span = $(".close");
+
     $("#btn").on("click", function (event) {
         event.preventDefault();
 
@@ -155,25 +158,21 @@
 
         $.post("/api/friends", newFriend)
             .then(function (data) {
-                var modal = $("#myModal");
-                var span = $(".close");
 
-                $("#matchName").html("Your best match is: <br>" + data.name);
+                $("#matchName").html("Your best match is: <br><br>" + data.name + "<br><br>");
                 $("#matchPhoto").attr("src", data.photo);
 
                 modal.show();
                 span.show();
-
-                span.click = function () {
-                    modal.hide();
-                };
-
-                window.click = function (event) {
-                    if (event.target == modal) {
-                        modal.hide();
-                    }
-                };
             });
+    });
+
+    span.on("click", function () {
+        modal.hide();
+    });
+
+    $(document).on("click", function (event) {
+        modal.hide();
     });
 </script>
 
