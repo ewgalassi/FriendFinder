@@ -28,3 +28,7 @@ The website will provide you with the instructions, just take the survey and cli
 
 ### If you have any difficulty
 Please contact me.  I maintain my repositories regularly, so I will try to work out any bugs you encounter.
+
+
+### Languages and resources
+This app uses HTML, CSS, Javascript, node.js, and express.js.
