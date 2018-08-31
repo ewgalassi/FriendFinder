@@ -4,6 +4,8 @@ This app is a way to find the perfect friend for you based on your responses to 
 
 ### How to install it
 Here is how you get started:
+
+Enter in these commands in your command line console
 ```
 git clone git@github.com:ewgalassi/friendfinder.git
 cd friendfinder
