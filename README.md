@@ -26,6 +26,8 @@ http://localhost:7000
 
 The website will provide you with the instructions, just take the survey and click on the button to find your new best friend!
 
+- - -
+
 ### If you have any difficulty
 Please contact me.  I maintain my repositories regularly, so I will try to work out any bugs you encounter.
 
