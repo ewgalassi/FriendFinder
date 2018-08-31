@@ -2,7 +2,7 @@
 
 This app is a way to find the perfect friend for you based on your responses to our thorough and completely accurate survey.
 
-## How to install it
+### How to install it
 Here is how you get started:
 ```
 git clone git@github.com:ewgalassi/friendfinder.git
