@@ -39,6 +39,8 @@ router.post("/", function (req, res) {
         };
         totalArr.push(total);
     };
+    friends.push(req.body);
+    console.log(friends);
     var lowNum = Math.min.apply(null, totalArr);
     var match = totalArr.indexOf(lowNum);
     res.json(friends[match]);
