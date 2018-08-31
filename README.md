@@ -1,5 +1,7 @@
 # FriendFinder
 
+- - -
+
 This app is a way to find the perfect friend for you based on your responses to our thorough and completely accurate survey.
 
 ### How to install it
