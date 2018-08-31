@@ -3,6 +3,12 @@
 
 This app is a way to find the perfect friend for you based on your responses to our thorough and completely accurate survey.
 
+## Click the link for the deployed app
+
+https://morning-oasis-71374.herokuapp.com/
+
+Otherwise, you can install the app on your own computer.
+
 ### How to install it
 Here is how you get started:
 
